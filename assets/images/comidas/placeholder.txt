@@ -1,0 +1,46 @@
+INSTRUÇÕES PARA IMAGENS DAS COMIDAS
+====================================
+
+Coloque as seguintes imagens nesta pasta:
+
+PEIXES:
+-------
+- bacalhau.jpg (Bacalhau à Brás ou similar)
+- bacalhau-lagareiro.jpg
+- polvo.jpg (Polvo à Lagareiro)
+- robalo.jpg
+- dourada.jpg
+- caldeirada.jpg
+
+CARNES:
+-------
+- posta-mirandesa.jpg
+- maminha.jpg
+- secretos.jpg (Secretos de Porco Preto)
+- bife.jpg (Bife à Portuguesa)
+- borrego.jpg (Costeletas)
+- febras.jpg
+
+SOBREMESAS:
+-----------
+- pudim.jpg (Pudim Abade de Priscos)
+- leite-creme.jpg
+- mousse.jpg (Mousse de Chocolate)
+- tarte.jpg (Tarte de Amêndoa)
+- arroz-doce.jpg
+- pera.jpg (Pêra Bêbeda)
+
+
+ESPECIFICAÇÕES:
+---------------
+- Tamanho recomendado: 600x400px ou 800x600px
+- Formato: JPG (para menor tamanho de ficheiro)
+- Qualidade: Alta, mas comprimida
+
+DICAS PARA FOTOS DE COMIDA:
+---------------------------
+1. Use luz natural sempre que possível
+2. Fotografe de cima (flatlay) ou a 45 graus
+3. Inclua elementos decorativos (talheres, guardanapo)
+4. Fundo neutro ou madeira funciona bem
+5. Certifique-se que o prato está bem apresentado

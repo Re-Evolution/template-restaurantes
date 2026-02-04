@@ -1,0 +1,62 @@
+INSTRUÇÕES PARA IMAGENS DO RESTAURANTE
+=======================================
+
+Coloque as seguintes imagens nesta pasta:
+
+1. logo.png
+   - Logo principal do restaurante
+   - Fundo transparente (PNG)
+   - Largura recomendada: 200px
+
+2. logo-white.png
+   - Logo em versão branca para o footer
+   - Fundo transparente (PNG)
+
+3. hero-bg.jpg
+   - Imagem de fundo principal do site
+   - Tamanho: 1920x1080px (ou maior)
+   - Pode ser do interior, fachada ou pratos
+
+4. interior.jpg
+   - Foto do interior do restaurante
+   - Tamanho: 800x600px
+
+5. sala-1.jpg
+   - Foto da sala principal
+   - Tamanho: 600x600px (quadrado)
+
+6. esplanada.jpg
+   - Foto da esplanada
+   - Tamanho: 600x600px
+
+7. entrada.jpg
+   - Foto da entrada/fachada
+   - Tamanho: 600x600px
+
+8. detalhe.jpg
+   - Foto de detalhe decorativo
+   - Tamanho: 600x600px
+
+9. og-image.jpg
+   - Imagem para partilha em redes sociais
+   - Tamanho OBRIGATÓRIO: 1200x630px
+
+10. favicon-32x32.png
+    - Favicon do site
+    - Tamanho: 32x32px
+
+11. favicon-16x16.png
+    - Favicon pequeno
+    - Tamanho: 16x16px
+
+12. apple-touch-icon.png
+    - Ícone para dispositivos Apple
+    - Tamanho: 180x180px
+
+
+DICAS:
+------
+- Use JPG para fotografias (menor tamanho)
+- Use PNG para logos (suporta transparência)
+- Comprima as imagens em https://tinypng.com
+- Mantenha os nomes dos ficheiros EXATAMENTE como indicado

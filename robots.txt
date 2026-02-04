@@ -1,0 +1,11 @@
+# Robots.txt for O Sem Nome
+# https://osemnome.pt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://osemnome.pt/sitemap.xml
+
+# Disallow admin or sensitive areas (if any)
+# Disallow: /admin/

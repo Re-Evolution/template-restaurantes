@@ -252,19 +252,20 @@
                     <li class="nav-item">
                         <a href="#home" class="nav-link active" data-i18n="nav.home">Inicio</a>
                     </li>
-                    <li class="nav-item nav-dropdown">
-                        <a href="#about" class="nav-link nav-dropdown-toggle" data-i18n="nav.about">Sobre Nos <i class="fas fa-chevron-down nav-dropdown-icon"></i></a>
-                        <ul class="nav-dropdown-menu">
-                            <li><a href="#about" class="nav-dropdown-link" data-i18n="nav.about">Sobre Nos</a></li>
-                            <li><a href="#gallery" class="nav-dropdown-link" data-i18n="nav.gallery">Galeria</a></li>
-                            <li><a href="#testimonials" class="nav-dropdown-link" data-i18n="nav.testimonials">Testemunhos</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link" data-i18n="nav.about">Sobre Nos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#gallery" class="nav-link" data-i18n="nav.gallery">Galeria</a>
                     </li>
                     <li class="nav-item">
                         <a href="#menu" class="nav-link" data-i18n="nav.menu">Menu</a>
                     </li>
                     <li class="nav-item">
                         <a href="#reservations" class="nav-link" data-i18n="nav.reservations">Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Testemunhos</a>
                     </li>
                     <li class="nav-item">
                         <a href="#location" class="nav-link" data-i18n="nav.location">Localizacao</a>
@@ -678,22 +679,22 @@
                     </div>
 
                     <div class="reservations-form-wrapper" data-aos="fade-left" data-aos-delay="100">
-                        <form id="reservation-form" class="reservations-form" autocomplete="on">
+                        <form id="reservation-form" class="reservations-form">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="res-name">Nome Completo *</label>
-                                    <input type="text" id="res-name" name="name" required placeholder="O seu nome" autocomplete="name">
+                                    <input type="text" id="res-name" name="name" required placeholder="O seu nome">
                                 </div>
                             </div>
 
                             <div class="form-row form-row-2">
                                 <div class="form-group">
                                     <label for="res-email">Email *</label>
-                                    <input type="email" id="res-email" name="email" required placeholder="email@exemplo.pt" autocomplete="email">
+                                    <input type="email" id="res-email" name="email" required placeholder="email@exemplo.pt">
                                 </div>
                                 <div class="form-group">
                                     <label for="res-phone">Telefone *</label>
-                                    <input type="tel" id="res-phone" name="phone" required placeholder="912 345 678" autocomplete="tel">
+                                    <input type="tel" id="res-phone" name="phone" required placeholder="912 345 678">
                                 </div>
                             </div>
 

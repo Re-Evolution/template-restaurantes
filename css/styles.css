@@ -2317,7 +2317,7 @@ img[loading="lazy"] {
     .language-selector {
         position: fixed;
         top: var(--space-lg);
-        right: calc(var(--space-lg) + 50px); /* Space for hamburger menu */
+        right: calc(var(--space-lg) + 60px); /* Space for hamburger menu */
         z-index: calc(var(--z-fixed) + 10);
     }
 
@@ -2336,7 +2336,7 @@ img[loading="lazy"] {
 /* Mobile adjustments for language selector */
 @media (max-width: 480px) {
     .language-selector {
-        right: calc(var(--space-md) + 45px);
+        right: calc(var(--space-md) + 55px);
         top: var(--space-md);
     }
 

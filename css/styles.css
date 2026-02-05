@@ -2317,7 +2317,7 @@ img[loading="lazy"] {
     .language-selector {
         position: fixed;
         top: var(--space-lg);
-        right: var(--space-lg);
+        right: calc(var(--space-lg) + 50px); /* Space for hamburger menu */
         z-index: calc(var(--z-fixed) + 10);
     }
 
@@ -2330,6 +2330,22 @@ img[loading="lazy"] {
 
     .language-btn:hover {
         background: var(--color-gray-100);
+    }
+}
+
+/* Mobile adjustments for language selector */
+@media (max-width: 480px) {
+    .language-selector {
+        right: calc(var(--space-md) + 45px);
+        top: var(--space-md);
+    }
+
+    .language-btn {
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    .language-btn .lang-code {
+        display: none;
     }
 }
 

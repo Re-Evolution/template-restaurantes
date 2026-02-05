@@ -277,34 +277,34 @@
                 </div>
             </div>
 
-            <div class="nav-buttons">
-                <!-- Language Selector -->
-                <div class="language-selector" id="language-selector">
-                    <button class="language-btn" id="language-btn" aria-label="Selecionar idioma" aria-expanded="false">
-                        <img src="https://flagcdn.com/w20/pt.png" alt="PT" class="flag-icon" id="current-flag">
-                        <span class="lang-code" id="current-lang">PT</span>
-                        <i class="fas fa-chevron-down"></i>
+            <!-- Language Selector - Outside nav-buttons for mobile visibility -->
+            <div class="language-selector" id="language-selector">
+                <button class="language-btn" id="language-btn" aria-label="Selecionar idioma" aria-expanded="false">
+                    <img src="https://flagcdn.com/w20/pt.png" alt="PT" class="flag-icon" id="current-flag">
+                    <span class="lang-code" id="current-lang">PT</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="language-dropdown" id="language-dropdown">
+                    <button class="language-option active" data-lang="pt" data-flag="pt">
+                        <img src="https://flagcdn.com/w20/pt.png" alt="Portugal" class="flag-icon">
+                        <span>Portugues</span>
                     </button>
-                    <div class="language-dropdown" id="language-dropdown">
-                        <button class="language-option active" data-lang="pt" data-flag="pt">
-                            <img src="https://flagcdn.com/w20/pt.png" alt="Portugal" class="flag-icon">
-                            <span>Portugues</span>
-                        </button>
-                        <button class="language-option" data-lang="en" data-flag="gb">
-                            <img src="https://flagcdn.com/w20/gb.png" alt="English" class="flag-icon">
-                            <span>English</span>
-                        </button>
-                        <button class="language-option" data-lang="fr" data-flag="fr">
-                            <img src="https://flagcdn.com/w20/fr.png" alt="Francais" class="flag-icon">
-                            <span>Francais</span>
-                        </button>
-                        <button class="language-option" data-lang="de" data-flag="de">
-                            <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" class="flag-icon">
-                            <span>Deutsch</span>
-                        </button>
-                    </div>
+                    <button class="language-option" data-lang="en" data-flag="gb">
+                        <img src="https://flagcdn.com/w20/gb.png" alt="English" class="flag-icon">
+                        <span>English</span>
+                    </button>
+                    <button class="language-option" data-lang="fr" data-flag="fr">
+                        <img src="https://flagcdn.com/w20/fr.png" alt="Francais" class="flag-icon">
+                        <span>Francais</span>
+                    </button>
+                    <button class="language-option" data-lang="de" data-flag="de">
+                        <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" class="flag-icon">
+                        <span>Deutsch</span>
+                    </button>
                 </div>
+            </div>
 
+            <div class="nav-buttons">
                 <a href="tel:+351213011958" class="nav-cta nav-cta-phone" title="Ligar agora">
                     <i class="fas fa-phone"></i>
                     <span>Ligar</span>

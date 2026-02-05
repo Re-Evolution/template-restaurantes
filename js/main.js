@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initAOS();
     initBackToTop();
     updateCopyrightYear();
+    initLanguageSelector();
 });
 
 /* ==========================================
@@ -850,3 +851,198 @@ function throttle(func, limit) {
  *   "timestamp": "2024-01-10T15:30:00.000Z"
  * }
  */
+
+/* ==========================================
+   LANGUAGE SELECTOR & TRANSLATION SYSTEM
+   ========================================== */
+
+// Current language (default: Portuguese)
+let currentLanguage = 'pt';
+
+// Flag URLs mapping
+const FLAG_URLS = {
+    pt: 'https://flagcdn.com/w20/pt.png',
+    en: 'https://flagcdn.com/w20/gb.png',
+    fr: 'https://flagcdn.com/w20/fr.png',
+    de: 'https://flagcdn.com/w20/de.png'
+};
+
+// Language names
+const LANG_NAMES = {
+    pt: 'PT',
+    en: 'EN',
+    fr: 'FR',
+    de: 'DE'
+};
+
+function initLanguageSelector() {
+    const languageBtn = document.getElementById('language-btn');
+    const languageDropdown = document.getElementById('language-dropdown');
+    const languageOptions = document.querySelectorAll('.language-option');
+
+    if (!languageBtn || !languageDropdown) return;
+
+    // Load saved language preference
+    const savedLang = localStorage.getItem('osemnome-language');
+    if (savedLang && TRANSLATIONS[savedLang]) {
+        currentLanguage = savedLang;
+        applyTranslations(currentLanguage);
+        updateLanguageButton(currentLanguage);
+        updateActiveOption(currentLanguage);
+    }
+
+    // Toggle dropdown
+    languageBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isExpanded = languageBtn.getAttribute('aria-expanded') === 'true';
+        languageBtn.setAttribute('aria-expanded', !isExpanded);
+        languageDropdown.classList.toggle('active');
+    });
+
+    // Language option click
+    languageOptions.forEach(function(option) {
+        option.addEventListener('click', function() {
+            const lang = option.getAttribute('data-lang');
+            if (lang && TRANSLATIONS[lang]) {
+                changeLanguage(lang);
+                languageDropdown.classList.remove('active');
+                languageBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.language-selector')) {
+            languageDropdown.classList.remove('active');
+            languageBtn.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Close dropdown on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            languageDropdown.classList.remove('active');
+            languageBtn.setAttribute('aria-expanded', 'false');
+        }
+    });
+}
+
+function changeLanguage(lang) {
+    if (!TRANSLATIONS[lang]) return;
+
+    currentLanguage = lang;
+    localStorage.setItem('osemnome-language', lang);
+
+    applyTranslations(lang);
+    updateLanguageButton(lang);
+    updateActiveOption(lang);
+
+    // Update HTML lang attribute
+    document.documentElement.lang = lang === 'pt' ? 'pt-PT' : lang;
+
+    // Announce language change for screen readers
+    announceLanguageChange(lang);
+}
+
+function applyTranslations(lang) {
+    const translations = TRANSLATIONS[lang];
+    if (!translations) return;
+
+    // Find all elements with data-i18n attribute
+    const elements = document.querySelectorAll('[data-i18n]');
+
+    elements.forEach(function(element) {
+        const key = element.getAttribute('data-i18n');
+        const translation = getNestedTranslation(translations, key);
+
+        if (translation) {
+            // Handle different element types
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                if (element.hasAttribute('placeholder')) {
+                    element.placeholder = translation;
+                }
+            } else {
+                element.textContent = translation;
+            }
+        }
+    });
+
+    // Update meta description
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && translations.meta && translations.meta.description) {
+        metaDesc.setAttribute('content', translations.meta.description);
+    }
+}
+
+function getNestedTranslation(obj, path) {
+    const keys = path.split('.');
+    let result = obj;
+
+    for (let key of keys) {
+        if (result && typeof result === 'object' && key in result) {
+            result = result[key];
+        } else {
+            return null;
+        }
+    }
+
+    return typeof result === 'string' ? result : null;
+}
+
+function updateLanguageButton(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    const currentLang = document.getElementById('current-lang');
+
+    if (currentFlag) {
+        currentFlag.src = FLAG_URLS[lang];
+        currentFlag.alt = LANG_NAMES[lang];
+    }
+
+    if (currentLang) {
+        currentLang.textContent = LANG_NAMES[lang];
+    }
+}
+
+function updateActiveOption(lang) {
+    const options = document.querySelectorAll('.language-option');
+
+    options.forEach(function(option) {
+        const optionLang = option.getAttribute('data-lang');
+        option.classList.toggle('active', optionLang === lang);
+    });
+}
+
+function announceLanguageChange(lang) {
+    // Create an aria-live region for screen readers
+    let announcer = document.getElementById('language-announcer');
+
+    if (!announcer) {
+        announcer = document.createElement('div');
+        announcer.id = 'language-announcer';
+        announcer.setAttribute('aria-live', 'polite');
+        announcer.setAttribute('aria-atomic', 'true');
+        announcer.style.cssText = 'position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;';
+        document.body.appendChild(announcer);
+    }
+
+    const langNames = {
+        pt: 'Português',
+        en: 'English',
+        fr: 'Français',
+        de: 'Deutsch'
+    };
+
+    announcer.textContent = langNames[lang] || lang;
+}
+
+// Get current translation for a key (useful for dynamic content)
+function t(key) {
+    const translations = TRANSLATIONS[currentLanguage];
+    return getNestedTranslation(translations, key) || key;
+}
+
+// Make translation function globally available
+window.t = t;
+window.changeLanguage = changeLanguage;
+window.currentLanguage = function() { return currentLanguage; };

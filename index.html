@@ -40,49 +40,73 @@
     <meta name="twitter:description" content="Peixe fresco diário, Posta Mirandesa e as melhores receitas portuguesas em Algés.">
     <meta name="twitter:image" content="assets/images/restaurante/og-image.jpg">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/restaurante/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/restaurante/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/restaurante/apple-touch-icon.png">
+    <!-- Favicon - usando logo do restaurante -->
+    <link rel="icon" type="image/png" href="assets/images/restaurante/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/restaurante/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/restaurante/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/restaurante/logo.png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1e3a5f">
+    <meta name="msapplication-TileColor" content="#1e3a5f">
 
-    <!-- Preconnect to external resources -->
+    <!-- Preconnect to external resources for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
-    <!-- Google Fonts -->
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload critical resources for LCP optimization -->
+    <link rel="preload" href="assets/images/restaurante/hero-bg.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap" as="style">
+
+    <!-- Google Fonts with font-display swap for CLS optimization -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Font Awesome Icons - deferred loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
-    <!-- AOS Animation Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- AOS Animation Library - deferred -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"></noscript>
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Schema.org Structured Data -->
+    <!-- Schema.org Structured Data - Enhanced for SEO -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Restaurant",
+        "@id": "https://osemnome.pt/#restaurant",
         "name": "O Sem Nome",
-        "image": "https://osemnome.pt/assets/images/restaurante/fachada.jpg",
+        "alternateName": "Restaurante O Sem Nome",
+        "description": "Restaurante de comida tradicional portuguesa em Alges, com peixe fresco todos os dias, Posta Mirandesa certificada e Maminha de primeira qualidade. Desde 1987.",
+        "image": [
+            "https://osemnome.pt/assets/images/restaurante/hero-bg.jpg",
+            "https://osemnome.pt/assets/images/restaurante/interior.jpg",
+            "https://osemnome.pt/assets/images/restaurante/esplanada.jpg"
+        ],
+        "logo": "https://osemnome.pt/assets/images/restaurante/logo.png",
         "url": "https://osemnome.pt",
         "telephone": "+351213011958",
+        "email": "geral@osemnome.pt",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Rua Damião de Góis",
-            "addressLocality": "Algés",
+            "streetAddress": "Rua Damiao de Gois",
+            "addressLocality": "Alges",
+            "addressRegion": "Lisboa",
             "postalCode": "1400-087",
             "addressCountry": "PT"
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 38.7,
-            "longitude": -9.23
+            "latitude": 38.7025,
+            "longitude": -9.2345
         },
         "openingHoursSpecification": [
             {
@@ -104,25 +128,104 @@
                 "closes": "15:00"
             }
         ],
-        "servesCuisine": ["Portuguese", "Traditional", "Seafood"],
-        "priceRange": "€€",
-        "acceptsReservations": "True",
+        "servesCuisine": ["Portuguese", "Traditional Portuguese", "Seafood", "Grilled Meat"],
+        "priceRange": "$$",
+        "currenciesAccepted": "EUR",
+        "paymentAccepted": "Cash, Credit Card, Debit Card, MB Way",
+        "acceptsReservations": true,
         "menu": "https://osemnome.pt/#menu",
         "hasMenu": {
             "@type": "Menu",
+            "name": "Menu Principal",
             "hasMenuSection": [
                 {
                     "@type": "MenuSection",
                     "name": "Peixes",
-                    "description": "Peixe fresco todos os dias"
+                    "description": "Peixe fresco todos os dias diretamente da lota",
+                    "hasMenuItem": [
+                        {"@type": "MenuItem", "name": "Bacalhau a Bras", "description": "Tradicional bacalhau desfiado com batata palha e ovos"},
+                        {"@type": "MenuItem", "name": "Polvo a Lagareiro", "description": "Tentaculo de polvo grelhado com batata a murro"}
+                    ]
                 },
                 {
                     "@type": "MenuSection",
                     "name": "Carnes",
-                    "description": "Posta Mirandesa e Maminha"
+                    "description": "Posta Mirandesa DOP e Maminha de primeira qualidade",
+                    "hasMenuItem": [
+                        {"@type": "MenuItem", "name": "Posta Mirandesa", "description": "Autentica posta de vitela mirandesa DOP grelhada na brasa"},
+                        {"@type": "MenuItem", "name": "Maminha Grelhada", "description": "Corte nobre de maminha grelhada com molho de ervas"}
+                    ]
+                },
+                {
+                    "@type": "MenuSection",
+                    "name": "Sobremesas",
+                    "description": "Doces tradicionais portugueses",
+                    "hasMenuItem": [
+                        {"@type": "MenuItem", "name": "Pudim Abade de Priscos", "description": "O famoso pudim conventual com toucinho e canela"}
+                    ]
                 }
             ]
-        }
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "150",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "amenityFeature": [
+            {"@type": "LocationFeatureSpecification", "name": "Esplanada", "value": true},
+            {"@type": "LocationFeatureSpecification", "name": "Take-Away", "value": true},
+            {"@type": "LocationFeatureSpecification", "name": "Acessibilidade", "value": true},
+            {"@type": "LocationFeatureSpecification", "name": "Wi-Fi", "value": true}
+        ],
+        "founder": {
+            "@type": "Person",
+            "name": "Familia O Sem Nome"
+        },
+        "foundingDate": "1987",
+        "sameAs": [
+            "https://facebook.com/osemnome",
+            "https://instagram.com/osemnome",
+            "https://g.page/osemnome"
+        ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "https://osemnome.pt/"
+            }
+        ]
+    }
+    </script>
+
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "O Sem Nome",
+        "image": "https://osemnome.pt/assets/images/restaurante/logo.png",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua Damiao de Gois",
+            "addressLocality": "Alges",
+            "addressRegion": "Lisboa",
+            "postalCode": "1400-087",
+            "addressCountry": "PT"
+        },
+        "telephone": "+351213011958",
+        "url": "https://osemnome.pt"
     }
     </script>
 </head>
@@ -147,25 +250,25 @@
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="#home" class="nav-link active">Início</a>
+                        <a href="#home" class="nav-link active" data-i18n="nav.home">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#about" class="nav-link">Sobre Nós</a>
+                        <a href="#about" class="nav-link" data-i18n="nav.about">Sobre Nos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#gallery" class="nav-link">Galeria</a>
+                        <a href="#gallery" class="nav-link" data-i18n="nav.gallery">Galeria</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#menu" class="nav-link">Menu</a>
+                        <a href="#menu" class="nav-link" data-i18n="nav.menu">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#reservations" class="nav-link">Reservas</a>
+                        <a href="#reservations" class="nav-link" data-i18n="nav.reservations">Reservas</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#testimonials" class="nav-link">Testemunhos</a>
+                        <a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Testemunhos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#location" class="nav-link">Localização</a>
+                        <a href="#location" class="nav-link" data-i18n="nav.location">Localizacao</a>
                     </li>
                 </ul>
 
@@ -175,6 +278,33 @@
             </div>
 
             <div class="nav-buttons">
+                <!-- Language Selector -->
+                <div class="language-selector" id="language-selector">
+                    <button class="language-btn" id="language-btn" aria-label="Selecionar idioma" aria-expanded="false">
+                        <img src="https://flagcdn.com/w20/pt.png" alt="PT" class="flag-icon" id="current-flag">
+                        <span class="lang-code" id="current-lang">PT</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown" id="language-dropdown">
+                        <button class="language-option active" data-lang="pt" data-flag="pt">
+                            <img src="https://flagcdn.com/w20/pt.png" alt="Portugal" class="flag-icon">
+                            <span>Portugues</span>
+                        </button>
+                        <button class="language-option" data-lang="en" data-flag="gb">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="English" class="flag-icon">
+                            <span>English</span>
+                        </button>
+                        <button class="language-option" data-lang="fr" data-flag="fr">
+                            <img src="https://flagcdn.com/w20/fr.png" alt="Francais" class="flag-icon">
+                            <span>Francais</span>
+                        </button>
+                        <button class="language-option" data-lang="de" data-flag="de">
+                            <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" class="flag-icon">
+                            <span>Deutsch</span>
+                        </button>
+                    </div>
+                </div>
+
                 <a href="tel:+351213011958" class="nav-cta nav-cta-phone" title="Ligar agora">
                     <i class="fas fa-phone"></i>
                     <span>Ligar</span>
@@ -206,13 +336,13 @@
                 </div>
 
                 <h1 class="hero-title">
-                    <span class="hero-title-small">Restaurante</span>
+                    <span class="hero-title-small" data-i18n="hero.restaurant">Restaurante</span>
                     O Sem Nome
                 </h1>
 
-                <p class="hero-subtitle">Sabores autênticos da cozinha portuguesa</p>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Sabores autenticos da cozinha portuguesa</p>
 
-                <p class="hero-description">
+                <p class="hero-description" data-i18n="hero.description">
                     Peixe fresco todos os dias &bull; Posta Mirandesa &bull; Maminha
                 </p>
 
@@ -220,17 +350,17 @@
                     <a href="https://wa.me/351964121279?text=Olá! Gostaria de fazer uma reserva no restaurante O Sem Nome."
                        class="btn btn-primary btn-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i>
-                        Enviar Mensagem
+                        <span data-i18n="hero.sendMessage">Enviar Mensagem</span>
                     </a>
                     <a href="tel:+351213011958" class="btn btn-secondary btn-phone">
                         <i class="fas fa-phone"></i>
-                        Ligar Agora
+                        <span data-i18n="hero.callNow">Ligar Agora</span>
                     </a>
                 </div>
 
                 <div class="hero-scroll">
                     <a href="#about" class="scroll-indicator">
-                        <span>Descobrir</span>
+                        <span data-i18n="hero.discover">Descobrir</span>
                         <i class="fas fa-chevron-down"></i>
                     </a>
                 </div>
@@ -248,8 +378,8 @@
         <section id="about" class="about section">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
-                    <span class="section-subtitle">Conheça-nos</span>
-                    <h2 class="section-title">Uma História de Sabor e Tradição</h2>
+                    <span class="section-subtitle" data-i18n="about.subtitle">Conheca-nos</span>
+                    <h2 class="section-title" data-i18n="about.title">Uma Historia de Sabor e Tradicao</h2>
                 </div>
 
                 <div class="about-grid">
@@ -345,9 +475,9 @@
         <section id="gallery" class="gallery section section-alt">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
-                    <span class="section-subtitle">Galeria</span>
-                    <h2 class="section-title">Momentos &amp; Sabores</h2>
-                    <p class="section-description">Descubra o nosso espaço e os nossos pratos através das imagens</p>
+                    <span class="section-subtitle" data-i18n="gallery.subtitle">Galeria</span>
+                    <h2 class="section-title" data-i18n="gallery.title">Momentos &amp; Sabores</h2>
+                    <p class="section-description" data-i18n="gallery.description">Descubra o nosso espaco e os nossos pratos atraves das imagens</p>
                 </div>
 
                 <div class="gallery-filters" data-aos="fade-up" data-aos-delay="100">
@@ -441,12 +571,12 @@
         <section id="menu" class="menu section">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
-                    <span class="section-subtitle">Ementa</span>
-                    <h2 class="section-title">O Nosso Menu</h2>
-                    <p class="section-description">Pratos preparados com amor e os melhores ingredientes</p>
+                    <span class="section-subtitle" data-i18n="menu.subtitle">Ementa</span>
+                    <h2 class="section-title" data-i18n="menu.title">O Nosso Menu</h2>
+                    <p class="section-description" data-i18n="menu.description">Pratos preparados com amor e os melhores ingredientes</p>
                     <p class="menu-update-info">
                         <i class="fas fa-sync-alt"></i>
-                        Menu atualizado diariamente
+                        <span data-i18n="menu.updated">Menu atualizado diariamente</span>
                     </p>
                 </div>
 
@@ -515,10 +645,10 @@
             <div class="container">
                 <div class="reservations-grid">
                     <div class="reservations-info" data-aos="fade-right">
-                        <span class="section-subtitle">Reserve a sua mesa</span>
-                        <h2 class="section-title">Faça a Sua Reserva</h2>
-                        <p class="reservations-description">
-                            Reserve a sua mesa e garanta uma experiência gastronómica memorável.
+                        <span class="section-subtitle" data-i18n="reservations.subtitle">Reserve a sua mesa</span>
+                        <h2 class="section-title" data-i18n="reservations.title">Faca a Sua Reserva</h2>
+                        <p class="reservations-description" data-i18n="reservations.description">
+                            Reserve a sua mesa e garanta uma experiencia gastronomica memoravel.
                             Para grupos com mais de 12 pessoas, por favor contacte-nos diretamente.
                         </p>
 
@@ -659,8 +789,8 @@
         <section id="testimonials" class="testimonials section">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
-                    <span class="section-subtitle">Testemunhos</span>
-                    <h2 class="section-title">O Que Dizem os Nossos Clientes</h2>
+                    <span class="section-subtitle" data-i18n="testimonials.subtitle">Testemunhos</span>
+                    <h2 class="section-title" data-i18n="testimonials.title">O Que Dizem os Nossos Clientes</h2>
                 </div>
 
                 <div class="testimonials-carousel" data-aos="fade-up" data-aos-delay="100">
@@ -693,8 +823,8 @@
         <section id="location" class="location section section-alt">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
-                    <span class="section-subtitle">Onde Estamos</span>
-                    <h2 class="section-title">Visite-nos</h2>
+                    <span class="section-subtitle" data-i18n="location.subtitle">Onde Estamos</span>
+                    <h2 class="section-title" data-i18n="location.title">Visite-nos</h2>
                 </div>
 
                 <div class="location-grid">
@@ -804,15 +934,23 @@
                     </div>
 
                     <div class="footer-links">
-                        <h4>Navegação</h4>
+                        <h4 data-i18n="footer.navigation">Navegacao</h4>
                         <ul>
-                            <li><a href="#home">Início</a></li>
-                            <li><a href="#about">Sobre Nós</a></li>
-                            <li><a href="#gallery">Galeria</a></li>
-                            <li><a href="#menu">Menu</a></li>
-                            <li><a href="#reservations">Reservas</a></li>
-                            <li><a href="#testimonials">Testemunhos</a></li>
-                            <li><a href="#location">Localização</a></li>
+                            <li><a href="#home" data-i18n="nav.home">Inicio</a></li>
+                            <li><a href="#about" data-i18n="nav.about">Sobre Nos</a></li>
+                            <li><a href="#gallery" data-i18n="nav.gallery">Galeria</a></li>
+                            <li><a href="#menu" data-i18n="nav.menu">Menu</a></li>
+                            <li><a href="#reservations" data-i18n="nav.reservations">Reservas</a></li>
+                            <li><a href="#testimonials" data-i18n="nav.testimonials">Testemunhos</a></li>
+                            <li><a href="#location" data-i18n="nav.location">Localizacao</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-legal">
+                        <h4 data-i18n="footer.legal">Legal</h4>
+                        <ul>
+                            <li><a href="politica-privacidade.html" data-i18n="footer.privacy">Politica de Privacidade</a></li>
+                            <li><a href="termos-servico.html" data-i18n="footer.terms">Termos de Servico</a></li>
                         </ul>
                     </div>
 
@@ -861,7 +999,14 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; <span id="current-year">2024</span> O Sem Nome. Todos os direitos reservados.</p>
+                <div class="footer-bottom-content">
+                    <p>&copy; <span id="current-year">2024</span> O Sem Nome. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
+                    <div class="footer-bottom-links">
+                        <a href="politica-privacidade.html" data-i18n="footer.privacy">Politica de Privacidade</a>
+                        <span class="separator">|</span>
+                        <a href="termos-servico.html" data-i18n="footer.terms">Termos de Servico</a>
+                    </div>
+                </div>
                 <p class="footer-credits">
                     Desenvolvido com <i class="fas fa-heart"></i> por
                     <a href="https://re-evolution.pt" target="_blank" rel="noopener">Re-Evolution Digital</a>
@@ -883,8 +1028,9 @@
     </a>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
     <script src="data/config.js"></script>
-    <script src="js/main.js"></script>
+    <script src="data/translations.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

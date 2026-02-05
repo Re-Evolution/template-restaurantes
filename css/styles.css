@@ -2037,3 +2037,315 @@ input, textarea, select {
         scroll-behavior: auto;
     }
 }
+
+/* ==========================================
+   LANGUAGE SELECTOR
+   ========================================== */
+.language-selector {
+    position: relative;
+    z-index: var(--z-dropdown);
+}
+
+.language-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    color: var(--color-white);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+}
+
+.header.scrolled .language-btn {
+    background: var(--color-gray-100);
+    border-color: var(--color-gray-300);
+    color: var(--color-gray-800);
+}
+
+.language-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.header.scrolled .language-btn:hover {
+    background: var(--color-gray-200);
+}
+
+.language-btn .flag-icon {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+.language-btn .lang-code {
+    font-weight: 600;
+}
+
+.language-btn i {
+    font-size: var(--fs-xs);
+    transition: transform var(--transition-fast);
+}
+
+.language-btn[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: calc(100% + var(--space-sm));
+    right: 0;
+    min-width: 150px;
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all var(--transition-base);
+    overflow: hidden;
+}
+
+.language-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+    color: var(--color-gray-700);
+    font-size: var(--fs-sm);
+    text-align: left;
+}
+
+.language-option:hover {
+    background: var(--color-gray-100);
+}
+
+.language-option.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.language-option .flag-icon {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+/* ==========================================
+   FOOTER LEGAL SECTION
+   ========================================== */
+.footer-legal h4 {
+    font-family: var(--font-primary);
+    font-size: var(--fs-lg);
+    margin-bottom: var(--space-lg);
+    position: relative;
+    padding-bottom: var(--space-sm);
+}
+
+.footer-legal h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--color-secondary);
+}
+
+.footer-legal ul li {
+    margin-bottom: var(--space-sm);
+}
+
+.footer-legal ul li a {
+    color: var(--color-gray-400);
+    transition: all var(--transition-fast);
+}
+
+.footer-legal ul li a:hover {
+    color: var(--color-white);
+    padding-left: var(--space-sm);
+}
+
+/* Footer Bottom Enhanced */
+.footer-bottom-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+.footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.footer-bottom-links a {
+    color: var(--color-gray-400);
+    font-size: var(--fs-sm);
+    transition: color var(--transition-fast);
+}
+
+.footer-bottom-links a:hover {
+    color: var(--color-white);
+}
+
+.footer-bottom-links .separator {
+    color: var(--color-gray-600);
+}
+
+/* Update footer grid for 5 columns */
+@media (min-width: 1025px) {
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 0.8fr 1fr 1fr;
+    }
+}
+
+/* ==========================================
+   CORE WEB VITALS OPTIMIZATIONS
+   ========================================== */
+
+/* CLS Prevention - Reserve space for images */
+.hero-image,
+.about-image-wrapper img,
+.gallery-item img,
+.menu-item-image img {
+    aspect-ratio: auto;
+}
+
+.hero-bg {
+    min-height: 100vh;
+}
+
+/* LCP Optimization - Critical above-the-fold content */
+.hero {
+    contain: layout style;
+}
+
+.hero-image {
+    will-change: transform;
+}
+
+/* FID Optimization - Reduce JavaScript blocking */
+.nav-link,
+.btn,
+.filter-btn,
+.menu-tab,
+.carousel-btn {
+    touch-action: manipulation;
+}
+
+/* Improve perceived performance */
+img[loading="lazy"] {
+    background-color: var(--color-gray-200);
+}
+
+/* ==========================================
+   MOBILE FIRST ENHANCEMENTS
+   ========================================== */
+
+/* Ensure touch targets are at least 44x44 */
+@media (max-width: 768px) {
+    .nav-link,
+    .btn,
+    .filter-btn,
+    .menu-tab,
+    .language-option,
+    .carousel-btn,
+    .gallery-item {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .language-selector {
+        order: -1;
+    }
+
+    .nav-buttons {
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+    }
+
+    .language-btn {
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    .language-btn .lang-code {
+        display: none;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-legal {
+        order: -1;
+        text-align: center;
+    }
+
+    .footer-legal h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Tablet adjustments for language selector */
+@media (max-width: 1024px) {
+    .language-selector {
+        position: fixed;
+        top: var(--space-lg);
+        right: var(--space-lg);
+        z-index: calc(var(--z-fixed) + 10);
+    }
+
+    .language-btn {
+        background: var(--color-white);
+        color: var(--color-gray-800);
+        border-color: var(--color-gray-300);
+        box-shadow: var(--shadow-md);
+    }
+
+    .language-btn:hover {
+        background: var(--color-gray-100);
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .language-btn {
+        border-width: 2px;
+    }
+
+    .language-option.active {
+        outline: 2px solid var(--color-white);
+        outline-offset: -2px;
+    }
+}
+
+/* Dark mode support (future) */
+@media (prefers-color-scheme: dark) {
+    /* Placeholder for future dark mode implementation */
+}

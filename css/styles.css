@@ -1889,59 +1889,39 @@ input, textarea, select {
         display: none;
     }
 
-    /* Mobile dropdown styles - hidden by default, shown on click */
+    /* Mobile dropdown styles */
     .nav-dropdown-menu {
         position: static;
         transform: none;
         box-shadow: none;
-        background: var(--color-gray-100);
-        border-radius: var(--radius-md);
+        background: transparent;
         max-height: 0;
         overflow: hidden;
-        opacity: 0;
-        visibility: hidden;
+        opacity: 1;
+        visibility: visible;
         padding: 0;
         margin: 0;
-        margin-left: var(--space-md);
-        transition: all var(--transition-base);
-    }
-
-    /* Override desktop hover - only show on click (active class) */
-    .nav-dropdown:hover .nav-dropdown-menu {
-        opacity: 0;
-        visibility: hidden;
-        max-height: 0;
+        transition: max-height var(--transition-base);
     }
 
     .nav-dropdown.active .nav-dropdown-menu {
         max-height: 200px;
-        opacity: 1;
-        visibility: visible;
         padding: var(--space-sm) 0;
-        margin-top: var(--space-xs);
     }
 
     .nav-dropdown-link {
-        color: var(--color-gray-700);
-        padding: var(--space-sm) var(--space-lg);
+        color: var(--color-gray-600);
+        padding: var(--space-xs) var(--space-lg);
         font-size: var(--fs-base);
     }
 
     .nav-dropdown-link:hover {
-        background: var(--color-gray-200);
+        background: transparent;
         color: var(--color-primary);
     }
 
     .nav-dropdown-toggle {
         justify-content: flex-start;
-    }
-
-    .nav-dropdown-icon {
-        margin-left: auto;
-    }
-
-    .nav-dropdown.active .nav-dropdown-icon {
-        transform: rotate(180deg);
     }
 
     .about-grid {
@@ -2424,14 +2404,11 @@ img[loading="lazy"] {
     }
 }
 
-/* Tablet adjustments for language selector - positioned left near logo */
+/* Tablet adjustments for language selector */
 @media (max-width: 1024px) {
     .language-selector {
-        position: fixed;
-        top: 20px;
-        left: 80px;
-        right: auto;
-        z-index: calc(var(--z-fixed) + 10);
+        position: relative;
+        margin-right: var(--space-md);
     }
 
     .language-btn {
@@ -2453,14 +2430,6 @@ img[loading="lazy"] {
     .header.scrolled .language-btn {
         background: var(--color-white);
         border-color: var(--color-gray-300);
-    }
-}
-
-/* Mobile smaller screens */
-@media (max-width: 480px) {
-    .language-selector {
-        left: 65px;
-        top: 18px;
     }
 }
 

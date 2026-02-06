@@ -1,29 +1,29 @@
 /**
- * O Sem Nome - Sistema de Traducoes (i18n)
+ * O Sem Nome - Sistema de Traduções (i18n)
  * ==========================================
- * Traducoes para: Portugues (PT), English (EN), Francais (FR), Deutsch (DE)
+ * Traduções para: Português (PT), English (EN), Français (FR), Deutsch (DE)
  */
 
 const TRANSLATIONS = {
     // ==========================================
-    // PORTUGUES (PT) - Idioma padrao
+    // PORTUGUÊS (PT) - Idioma padrão
     // ==========================================
     pt: {
-        // Navegacao
+        // Navegação
         nav: {
-            home: "Inicio",
-            about: "Sobre Nos",
+            home: "Início",
+            about: "Sobre Nós",
             gallery: "Galeria",
             menu: "Menu",
             reservations: "Reservas",
             testimonials: "Testemunhos",
-            location: "Localizacao"
+            location: "Localização"
         },
 
         // Hero Section
         hero: {
             restaurant: "Restaurante",
-            subtitle: "Sabores autenticos da cozinha portuguesa",
+            subtitle: "Sabores autênticos da cozinha portuguesa",
             description: "Peixe fresco todos os dias • Posta Mirandesa • Maminha",
             sendMessage: "Enviar Mensagem",
             callNow: "Ligar Agora",
@@ -32,11 +32,11 @@ const TRANSLATIONS = {
 
         // About Section
         about: {
-            subtitle: "Conheca-nos",
-            title: "Uma Historia de Sabor e Tradicao",
-            paragraph1: "Nascido em 1987, no coracao de Alges, 'O Sem Nome' comecou como um pequeno estabelecimento familiar onde a avo Maria preparava os seus famosos pratos de bacalhau para os vizinhos do bairro.",
-            paragraph2: "Tres decadas depois, mantemos viva a mesma filosofia: ingredientes frescos, receitas transmitidas de geracao em geracao.",
-            paragraph3: "Hoje, sob a gestao da terceira geracao da familia, continuamos a honrar a tradicao enquanto acolhemos cada cliente como parte da nossa familia.",
+            subtitle: "Conheça-nos",
+            title: "Uma História de Sabor e Tradição",
+            paragraph1: "Nascido em 1987, no coração de Algés, 'O Sem Nome' começou como um pequeno estabelecimento familiar onde a avó Maria preparava os seus famosos pratos de bacalhau para os vizinhos do bairro.",
+            paragraph2: "Três décadas depois, mantemos viva a mesma filosofia: ingredientes frescos, receitas transmitidas de geração em geração.",
+            paragraph3: "Hoje, sob a gestão da terceira geração da família, continuamos a honrar a tradição enquanto acolhemos cada cliente como parte da nossa família.",
             highlights: {
                 fish: "Peixe fresco todos os dias",
                 steak: "Posta Mirandesa certificada",
@@ -44,12 +44,12 @@ const TRANSLATIONS = {
                 tradition: "Receitas tradicionais desde 1987"
             },
             services: {
-                lunch: "Almocos",
-                lunchDesc: "De segunda a domingo, das 12h as 15h",
+                lunch: "Almoços",
+                lunchDesc: "De segunda a domingo, das 12h às 15h",
                 dinner: "Jantares",
-                dinnerDesc: "De segunda a sabado, das 19h as 23h",
+                dinnerDesc: "De segunda a sábado, das 19h às 23h",
                 terrace: "Esplanada",
-                terraceDesc: "Desfrute das refeicoes ao ar livre",
+                terraceDesc: "Desfrute das refeições ao ar livre",
                 takeaway: "Take-Away",
                 takeawayDesc: "Leve os nossos pratos para casa"
             }
@@ -59,7 +59,7 @@ const TRANSLATIONS = {
         gallery: {
             subtitle: "Galeria",
             title: "Momentos & Sabores",
-            description: "Descubra o nosso espaco e os nossos pratos atraves das imagens",
+            description: "Descubra o nosso espaço e os nossos pratos através das imagens",
             filters: {
                 all: "Todos",
                 restaurant: "Restaurante",
@@ -78,30 +78,30 @@ const TRANSLATIONS = {
                 meat: "Carnes",
                 desserts: "Sobremesas"
             },
-            cta: "Para alergenios ou pedidos especiais, por favor contacte-nos",
+            cta: "Para alergénios ou pedidos especiais, por favor contacte-nos",
             callRestaurant: "Ligar para o Restaurante"
         },
 
         // Reservations Section
         reservations: {
             subtitle: "Reserve a sua mesa",
-            title: "Faca a Sua Reserva",
-            description: "Reserve a sua mesa e garanta uma experiencia gastronomica memoravel. Para grupos com mais de 12 pessoas, por favor contacte-nos diretamente.",
+            title: "Faça a Sua Reserva",
+            description: "Reserve a sua mesa e garanta uma experiência gastronómica memorável. Para grupos com mais de 12 pessoas, por favor contacte-nos diretamente.",
             form: {
                 name: "Nome Completo",
                 email: "Email",
                 phone: "Telefone",
                 date: "Data",
-                time: "Horario",
-                selectTime: "Selecione o horario",
-                lunch: "Almoco",
+                time: "Horário",
+                selectTime: "Selecione o horário",
+                lunch: "Almoço",
                 dinner: "Jantar",
-                guests: "Numero de Pessoas",
+                guests: "Número de Pessoas",
                 selectGuests: "Selecione",
                 person: "pessoa",
                 people: "pessoas",
-                message: "Observacoes",
-                messagePlaceholder: "Alguma informacao adicional? (alergias, ocasiao especial, etc.)",
+                message: "Observações",
+                messagePlaceholder: "Alguma informação adicional? (alergias, ocasião especial, etc.)",
                 submit: "Confirmar Reserva",
                 submitting: "A enviar..."
             },
@@ -116,8 +116,8 @@ const TRANSLATIONS = {
                 tryAgain: "Tentar Novamente"
             },
             hours: {
-                title: "Horario de Funcionamento",
-                weekdays: "Segunda a Sabado",
+                title: "Horário de Funcionamento",
+                weekdays: "Segunda a Sábado",
                 sunday: "Domingo"
             }
         },
@@ -126,8 +126,8 @@ const TRANSLATIONS = {
         testimonials: {
             subtitle: "Testemunhos",
             title: "O Que Dizem os Nossos Clientes",
-            cta: "Ja visitou o nosso restaurante?",
-            leaveReview: "Deixe a sua avaliacao"
+            cta: "Já visitou o nosso restaurante?",
+            leaveReview: "Deixe a sua avaliação"
         },
 
         // Location Section
@@ -135,21 +135,21 @@ const TRANSLATIONS = {
             subtitle: "Onde Estamos",
             title: "Visite-nos",
             address: "Morada",
-            hours: "Horario",
-            getDirections: "Obter Direcoes"
+            hours: "Horário",
+            getDirections: "Obter Direções"
         },
 
         // Footer
         footer: {
-            navigation: "Navegacao",
+            navigation: "Navegação",
             legal: "Legal",
-            privacy: "Politica de Privacidade",
-            terms: "Termos de Servico",
+            privacy: "Política de Privacidade",
+            terms: "Termos de Serviço",
             rights: "Todos os direitos reservados.",
             contacts: "Contactos",
-            hours: "Horario",
+            hours: "Horário",
             bookTable: "Reservar Mesa",
-            description: "Sabores autenticos da cozinha portuguesa desde 1987. Venha descobrir o verdadeiro sabor da tradicao."
+            description: "Sabores autênticos da cozinha portuguesa desde 1987. Venha descobrir o verdadeiro sabor da tradição."
         },
 
         // Common
@@ -158,7 +158,7 @@ const TRANSLATIONS = {
             whatsapp: "WhatsApp",
             email: "Email",
             call: "Ligar",
-            years: "Anos de tradicao"
+            years: "Anos de tradição"
         }
     },
 
@@ -188,7 +188,7 @@ const TRANSLATIONS = {
         about: {
             subtitle: "About Us",
             title: "A Story of Flavor and Tradition",
-            paragraph1: "Born in 1987, in the heart of Alges, 'O Sem Nome' started as a small family establishment where grandmother Maria prepared her famous codfish dishes for the neighborhood.",
+            paragraph1: "Born in 1987, in the heart of Algés, 'O Sem Nome' started as a small family establishment where grandmother Maria prepared her famous codfish dishes for the neighborhood.",
             paragraph2: "Three decades later, we keep the same philosophy alive: fresh ingredients, recipes passed down through generations.",
             paragraph3: "Today, under the management of the third generation of the family, we continue to honor tradition while welcoming each customer as part of our family.",
             highlights: {
@@ -310,15 +310,15 @@ const TRANSLATIONS = {
     },
 
     // ==========================================
-    // FRANCAIS (FR)
+    // FRANÇAIS (FR)
     // ==========================================
     fr: {
         nav: {
             home: "Accueil",
-            about: "A Propos",
+            about: "À Propos",
             gallery: "Galerie",
             menu: "Menu",
-            reservations: "Reservations",
+            reservations: "Réservations",
             testimonials: "Avis",
             location: "Localisation"
         },
@@ -329,29 +329,29 @@ const TRANSLATIONS = {
             description: "Poisson frais tous les jours • Posta Mirandesa • Viandes Premium",
             sendMessage: "Envoyer Message",
             callNow: "Appeler",
-            discover: "Decouvrir"
+            discover: "Découvrir"
         },
 
         about: {
-            subtitle: "A Propos de Nous",
+            subtitle: "À Propos de Nous",
             title: "Une Histoire de Saveur et de Tradition",
-            paragraph1: "Ne en 1987, au coeur d'Alges, 'O Sem Nome' a commence comme un petit etablissement familial ou grand-mere Maria preparait ses celebres plats de morue pour les voisins du quartier.",
-            paragraph2: "Trois decennies plus tard, nous maintenons la meme philosophie: ingredients frais, recettes transmises de generation en generation.",
-            paragraph3: "Aujourd'hui, sous la direction de la troisieme generation de la famille, nous continuons a honorer la tradition tout en accueillant chaque client comme membre de notre famille.",
+            paragraph1: "Né en 1987, au cœur d'Algés, 'O Sem Nome' a commencé comme un petit établissement familial où grand-mère Maria préparait ses célèbres plats de morue pour les voisins du quartier.",
+            paragraph2: "Trois décennies plus tard, nous maintenons la même philosophie: ingrédients frais, recettes transmises de génération en génération.",
+            paragraph3: "Aujourd'hui, sous la direction de la troisième génération de la famille, nous continuons à honorer la tradition tout en accueillant chaque client comme membre de notre famille.",
             highlights: {
                 fish: "Poisson frais tous les jours",
-                steak: "Posta Mirandesa certifiee",
-                maminha: "Maminha de premiere qualite",
+                steak: "Posta Mirandesa certifiée",
+                maminha: "Maminha de première qualité",
                 tradition: "Recettes traditionnelles depuis 1987"
             },
             services: {
-                lunch: "Dejeuners",
-                lunchDesc: "Du lundi au dimanche, de 12h a 15h",
-                dinner: "Diners",
-                dinnerDesc: "Du lundi au samedi, de 19h a 23h",
+                lunch: "Déjeuners",
+                lunchDesc: "Du lundi au dimanche, de 12h à 15h",
+                dinner: "Dîners",
+                dinnerDesc: "Du lundi au samedi, de 19h à 23h",
                 terrace: "Terrasse",
                 terraceDesc: "Profitez de vos repas en plein air",
-                takeaway: "A Emporter",
+                takeaway: "À Emporter",
                 takeawayDesc: "Emportez nos plats chez vous"
             }
         },
@@ -359,7 +359,7 @@ const TRANSLATIONS = {
         gallery: {
             subtitle: "Galerie",
             title: "Moments & Saveurs",
-            description: "Decouvrez notre espace et nos plats a travers les images",
+            description: "Découvrez notre espace et nos plats à travers les images",
             filters: {
                 all: "Tous",
                 restaurant: "Restaurant",
@@ -370,52 +370,52 @@ const TRANSLATIONS = {
         menu: {
             subtitle: "Carte",
             title: "Notre Menu",
-            description: "Plats prepares avec amour et les meilleurs ingredients",
-            updated: "Menu mis a jour quotidiennement",
+            description: "Plats préparés avec amour et les meilleurs ingrédients",
+            updated: "Menu mis à jour quotidiennement",
             categories: {
                 fish: "Poissons",
                 meat: "Viandes",
                 desserts: "Desserts"
             },
-            cta: "Pour les allergenes ou demandes speciales, veuillez nous contacter",
+            cta: "Pour les allergènes ou demandes spéciales, veuillez nous contacter",
             callRestaurant: "Appeler le Restaurant"
         },
 
         reservations: {
-            subtitle: "Reservez votre table",
-            title: "Faire une Reservation",
-            description: "Reservez votre table et assurez-vous une experience gastronomique memorable. Pour les groupes de plus de 12 personnes, veuillez nous contacter directement.",
+            subtitle: "Réservez votre table",
+            title: "Faire une Réservation",
+            description: "Réservez votre table et assurez-vous une expérience gastronomique mémorable. Pour les groupes de plus de 12 personnes, veuillez nous contacter directement.",
             form: {
                 name: "Nom Complet",
                 email: "Email",
-                phone: "Telephone",
+                phone: "Téléphone",
                 date: "Date",
                 time: "Heure",
-                selectTime: "Selectionnez l'heure",
-                lunch: "Dejeuner",
-                dinner: "Diner",
+                selectTime: "Sélectionnez l'heure",
+                lunch: "Déjeuner",
+                dinner: "Dîner",
                 guests: "Nombre de Personnes",
-                selectGuests: "Selectionnez",
+                selectGuests: "Sélectionnez",
                 person: "personne",
                 people: "personnes",
                 message: "Observations",
-                messagePlaceholder: "Informations supplementaires? (allergies, occasion speciale, etc.)",
-                submit: "Confirmer la Reservation",
+                messagePlaceholder: "Informations supplémentaires? (allergies, occasion spéciale, etc.)",
+                submit: "Confirmer la Réservation",
                 submitting: "Envoi en cours..."
             },
             success: {
-                title: "Reservation Recue!",
-                message: "Nous vous contacterons sous peu pour confirmer votre reservation.",
-                newReservation: "Nouvelle Reservation"
+                title: "Réservation Reçue!",
+                message: "Nous vous contacterons sous peu pour confirmer votre réservation.",
+                newReservation: "Nouvelle Réservation"
             },
             error: {
                 title: "Une erreur s'est produite",
-                message: "Veuillez reessayer ou nous contacter directement.",
-                tryAgain: "Reessayer"
+                message: "Veuillez réessayer ou nous contacter directement.",
+                tryAgain: "Réessayer"
             },
             hours: {
                 title: "Heures d'Ouverture",
-                weekdays: "Lundi a Samedi",
+                weekdays: "Lundi à Samedi",
                 sunday: "Dimanche"
             }
         },
@@ -423,36 +423,36 @@ const TRANSLATIONS = {
         testimonials: {
             subtitle: "Avis",
             title: "Ce Que Disent Nos Clients",
-            cta: "Avez-vous visite notre restaurant?",
+            cta: "Avez-vous visité notre restaurant?",
             leaveReview: "Laissez un avis"
         },
 
         location: {
-            subtitle: "Ou Nous Trouver",
+            subtitle: "Où Nous Trouver",
             title: "Visitez-nous",
             address: "Adresse",
             hours: "Horaires",
-            getDirections: "Obtenir l'itineraire"
+            getDirections: "Obtenir l'itinéraire"
         },
 
         footer: {
             navigation: "Navigation",
-            legal: "Mentions Legales",
-            privacy: "Politique de Confidentialite",
+            legal: "Mentions Légales",
+            privacy: "Politique de Confidentialité",
             terms: "Conditions d'Utilisation",
-            rights: "Tous droits reserves.",
+            rights: "Tous droits réservés.",
             contacts: "Contacts",
             hours: "Horaires",
-            bookTable: "Reserver une Table",
-            description: "Saveurs authentiques de la cuisine portugaise depuis 1987. Venez decouvrir le vrai gout de la tradition."
+            bookTable: "Réserver une Table",
+            description: "Saveurs authentiques de la cuisine portugaise depuis 1987. Venez découvrir le vrai goût de la tradition."
         },
 
         common: {
-            phone: "Telephone",
+            phone: "Téléphone",
             whatsapp: "WhatsApp",
             email: "Email",
             call: "Appeler",
-            years: "Annees de tradition"
+            years: "Années de tradition"
         }
     },
 
@@ -462,7 +462,7 @@ const TRANSLATIONS = {
     de: {
         nav: {
             home: "Startseite",
-            about: "Uber Uns",
+            about: "Über Uns",
             gallery: "Galerie",
             menu: "Speisekarte",
             reservations: "Reservierungen",
@@ -472,21 +472,21 @@ const TRANSLATIONS = {
 
         hero: {
             restaurant: "Restaurant",
-            subtitle: "Authentische Aromen der portugiesischen Kuche",
-            description: "Taglich frischer Fisch • Posta Mirandesa • Premium-Fleisch",
+            subtitle: "Authentische Aromen der portugiesischen Küche",
+            description: "Täglich frischer Fisch • Posta Mirandesa • Premium-Fleisch",
             sendMessage: "Nachricht Senden",
             callNow: "Jetzt Anrufen",
             discover: "Entdecken"
         },
 
         about: {
-            subtitle: "Uber Uns",
+            subtitle: "Über Uns",
             title: "Eine Geschichte von Geschmack und Tradition",
-            paragraph1: "1987 im Herzen von Alges geboren, begann 'O Sem Nome' als kleines Familienbetrieb, in dem Grossmutter Maria ihre beruhmten Kabeljaugerichte fur die Nachbarschaft zubereitete.",
-            paragraph2: "Drei Jahrzehnte spater halten wir die gleiche Philosophie am Leben: frische Zutaten, Rezepte, die von Generation zu Generation weitergegeben werden.",
-            paragraph3: "Heute, unter der Leitung der dritten Generation der Familie, ehren wir weiterhin die Tradition und heissen jeden Gast als Teil unserer Familie willkommen.",
+            paragraph1: "1987 im Herzen von Algés geboren, begann 'O Sem Nome' als kleines Familienbetrieb, in dem Großmutter Maria ihre berühmten Kabeljaugerichte für die Nachbarschaft zubereitete.",
+            paragraph2: "Drei Jahrzehnte später halten wir die gleiche Philosophie am Leben: frische Zutaten, Rezepte, die von Generation zu Generation weitergegeben werden.",
+            paragraph3: "Heute, unter der Leitung der dritten Generation der Familie, ehren wir weiterhin die Tradition und heißen jeden Gast als Teil unserer Familie willkommen.",
             highlights: {
-                fish: "Taglich frischer Fisch",
+                fish: "Täglich frischer Fisch",
                 steak: "Zertifizierte Posta Mirandesa",
                 maminha: "Erstklassige Maminha",
                 tradition: "Traditionelle Rezepte seit 1987"
@@ -497,7 +497,7 @@ const TRANSLATIONS = {
                 dinner: "Abendessen",
                 dinnerDesc: "Montag bis Samstag, 19-23 Uhr",
                 terrace: "Terrasse",
-                terraceDesc: "Geniessen Sie Ihre Mahlzeit im Freien",
+                terraceDesc: "Genießen Sie Ihre Mahlzeit im Freien",
                 takeaway: "Zum Mitnehmen",
                 takeawayDesc: "Nehmen Sie unsere Gerichte mit nach Hause"
             }
@@ -518,41 +518,41 @@ const TRANSLATIONS = {
             subtitle: "Speisekarte",
             title: "Unsere Speisekarte",
             description: "Gerichte zubereitet mit Liebe und den besten Zutaten",
-            updated: "Speisekarte taglich aktualisiert",
+            updated: "Speisekarte täglich aktualisiert",
             categories: {
                 fish: "Fisch",
                 meat: "Fleisch",
                 desserts: "Desserts"
             },
-            cta: "Fur Allergene oder besondere Wunsche kontaktieren Sie uns bitte",
+            cta: "Für Allergene oder besondere Wünsche kontaktieren Sie uns bitte",
             callRestaurant: "Restaurant Anrufen"
         },
 
         reservations: {
             subtitle: "Reservieren Sie Ihren Tisch",
             title: "Reservierung Vornehmen",
-            description: "Reservieren Sie Ihren Tisch und sichern Sie sich ein unvergessliches kulinarisches Erlebnis. Fur Gruppen grosser als 12 Personen kontaktieren Sie uns bitte direkt.",
+            description: "Reservieren Sie Ihren Tisch und sichern Sie sich ein unvergessliches kulinarisches Erlebnis. Für Gruppen größer als 12 Personen kontaktieren Sie uns bitte direkt.",
             form: {
-                name: "Vollstandiger Name",
+                name: "Vollständiger Name",
                 email: "E-Mail",
                 phone: "Telefon",
                 date: "Datum",
                 time: "Uhrzeit",
-                selectTime: "Uhrzeit wahlen",
+                selectTime: "Uhrzeit wählen",
                 lunch: "Mittagessen",
                 dinner: "Abendessen",
-                guests: "Anzahl der Gaste",
-                selectGuests: "Auswahlen",
+                guests: "Anzahl der Gäste",
+                selectGuests: "Auswählen",
                 person: "Person",
                 people: "Personen",
                 message: "Anmerkungen",
-                messagePlaceholder: "Zusatzliche Informationen? (Allergien, besonderer Anlass, etc.)",
-                submit: "Reservierung Bestatigen",
+                messagePlaceholder: "Zusätzliche Informationen? (Allergien, besonderer Anlass, etc.)",
+                submit: "Reservierung Bestätigen",
                 submitting: "Wird gesendet..."
             },
             success: {
                 title: "Reservierung Erhalten!",
-                message: "Wir werden Sie in Kurze kontaktieren, um Ihre Reservierung zu bestatigen.",
+                message: "Wir werden Sie in Kürze kontaktieren, um Ihre Reservierung zu bestätigen.",
                 newReservation: "Neue Reservierung"
             },
             error: {
@@ -561,7 +561,7 @@ const TRANSLATIONS = {
                 tryAgain: "Erneut Versuchen"
             },
             hours: {
-                title: "Offnungszeiten",
+                title: "Öffnungszeiten",
                 weekdays: "Montag bis Samstag",
                 sunday: "Sonntag"
             }
@@ -578,7 +578,7 @@ const TRANSLATIONS = {
             subtitle: "Wo Wir Sind",
             title: "Besuchen Sie Uns",
             address: "Adresse",
-            hours: "Offnungszeiten",
+            hours: "Öffnungszeiten",
             getDirections: "Wegbeschreibung"
         },
 
@@ -589,9 +589,9 @@ const TRANSLATIONS = {
             terms: "Nutzungsbedingungen",
             rights: "Alle Rechte vorbehalten.",
             contacts: "Kontakt",
-            hours: "Offnungszeiten",
+            hours: "Öffnungszeiten",
             bookTable: "Tisch Reservieren",
-            description: "Authentische Aromen der portugiesischen Kuche seit 1987. Entdecken Sie den wahren Geschmack der Tradition."
+            description: "Authentische Aromen der portugiesischen Küche seit 1987. Entdecken Sie den wahren Geschmack der Tradition."
         },
 
         common: {

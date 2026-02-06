@@ -13,7 +13,7 @@ const CONFIG = {
         nome: "O Sem Nome",
         slogan: "Sabores autênticos da cozinha portuguesa",
         descricao: "Restaurante de comida tradicional portuguesa em Algés, com peixe fresco todos os dias e as melhores carnes regionais.",
-        palavrasChave: "restaurante português, comida tradicional, peixe fresco, posta mirandesa, Algés, Lisboa"
+        palavrasChave: "Restaurante português, comida tradicional, peixe fresco, posta mirandesa, Algés, Lisboa"
     },
 
     // ==========================================

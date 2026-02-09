@@ -1821,6 +1821,11 @@ input, textarea, select {
         display: block;
     }
 
+    .nav-toggle {
+        order: -1;
+        margin-left: var(--space-md);
+    }
+
     .nav-close {
         position: absolute;
         top: var(--space-lg);
@@ -2275,10 +2280,6 @@ img[loading="lazy"] {
         min-width: 44px;
     }
 
-    .language-selector {
-        order: -1;
-    }
-
     .nav-buttons {
         flex-wrap: wrap;
         gap: var(--space-xs);
@@ -2315,9 +2316,8 @@ img[loading="lazy"] {
 /* Tablet adjustments for language selector */
 @media (max-width: 1024px) {
     .language-selector {
-        position: fixed;
-        top: var(--space-lg);
-        right: calc(var(--space-lg) + 60px); /* Space for hamburger menu */
+        order: 1;
+        margin-left: auto;
         z-index: calc(var(--z-fixed) + 10);
     }
 
@@ -2335,11 +2335,6 @@ img[loading="lazy"] {
 
 /* Mobile adjustments for language selector */
 @media (max-width: 480px) {
-    .language-selector {
-        right: calc(var(--space-md) + 55px);
-        top: var(--space-md);
-    }
-
     .language-btn {
         padding: var(--space-xs) var(--space-sm);
     }

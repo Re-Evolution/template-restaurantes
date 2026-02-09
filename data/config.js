@@ -180,11 +180,11 @@ const CONFIG = {
     webhooks: {
         // URL do webhook para receber dados do menu do Google Sheets
         // Configurar no Make: Google Sheets → Webhook Response
-        menuGoogleSheets: "SUBSTITUIR_PELO_URL_DO_WEBHOOK_MENU",
+        menuGoogleSheets: "https://hook.eu1.make.com/342syeirhgjemxax3yxhwfjphbv7w2td",
 
         // URL do webhook para enviar reservas
         // Configurar no Make: Webhook → Google Sheets
-        reservas: "SUBSTITUIR_PELO_URL_DO_WEBHOOK_RESERVAS"
+        reservas: "https://hook.eu1.make.com/3mrjjc98cdo4l9swri3686yqmd78vueq"
     },
 
     // ==========================================
@@ -192,7 +192,7 @@ const CONFIG = {
     // ==========================================
     menuConfig: {
         // ID da Google Sheet com o menu (para referência)
-        googleSheetId: "SUBSTITUIR_PELO_ID_DA_SHEET",
+        googleSheetId: "https://docs.google.com/spreadsheets/d/1hF-f3h0mwnNgxwe1iH0eefiLq7Sd8Qb1hIGHRe_rI60/edit?gid=1429296281#gid=1429296281",
 
         // Categorias do menu
         categorias: ["Entradas", "Peixes", "Carnes", "Sobremesas", "Bebidas"],

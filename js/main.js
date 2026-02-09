@@ -277,7 +277,7 @@ function initMenu() {
 
 // Load menu from Google Sheets via Make webhook
 async function loadMenuData() {
-    const webhookUrl = CONFIG.webhooks.menuGoogleSheets;
+    var webhookUrl = CONFIG.webhooks.menuGoogleSheets;
 
     // Check if webhook is configured
     if (webhookUrl === 'SUBSTITUIR_PELO_URL_DO_WEBHOOK_MENU') {
@@ -287,13 +287,47 @@ async function loadMenuData() {
     }
 
     try {
-        const response = await fetch(webhookUrl);
-        const data = await response.json();
+        var response = await fetch(webhookUrl);
+        var rawData = await response.json();
+        var data = transformMenuData(rawData);
         renderMenuItems(data);
     } catch (error) {
         console.error('Error loading menu:', error);
         loadDemoMenuData();
     }
+}
+
+// Transform Make webhook data to the format the site expects
+function transformMenuData(rawData) {
+    var categoryMap = {
+        'peixe': 'peixes',
+        'peixes': 'peixes',
+        'carne': 'carnes',
+        'carnes': 'carnes',
+        'sobremesa': 'sobremesas',
+        'sobremesas': 'sobremesas'
+    };
+
+    var result = {
+        peixes: [],
+        carnes: [],
+        sobremesas: []
+    };
+
+    rawData.forEach(function(item) {
+        var category = categoryMap[item.key.toLowerCase().trim()];
+        if (!category) return;
+
+        var parts = item.value.split(', ');
+        result[category].push({
+            name: parts[0] || '',
+            description: parts[1] || '',
+            price: parts[2] || '',
+            image: parts[3] || 'assets/images/comidas/placeholder.jpg'
+        });
+    });
+
+    return result;
 }
 
 // Demo menu data (used when webhook is not configured)

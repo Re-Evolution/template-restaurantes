@@ -1,0 +1,105 @@
+Conversa Menu - 06 a 09 de Fevereiro de 2026
+=============================================
+
+CONTEXTO:
+Projeto "O Sem Nome" - site de restaurante portugues.
+A seccao do menu precisa ser atualizada quase diariamente pelo cliente.
+
+---
+
+1. DECISAO: GOOGLE SHEETS PARA GESTAO DO MENU
+----------------------------------------------
+- Google Sheets e a melhor solucao para atualizacoes diarias
+- Custo zero, curva de aprendizagem minima
+- O dono do restaurante pode atualizar pelo telemovel
+- Integracao via Make.com (webhook) ja estava parcialmente implementada
+
+---
+
+2. CENARIO MAKE.COM - CONFIGURACAO
+-----------------------------------
+O cenario anterior foi apagado. Criou-se um novo cenario com 4 modulos em sequencia:
+
+[Webhook] -> [Google Sheets: Search Rows] -> [Array Aggregator] -> [Webhook Response]
+
+Webhook URL novo: https://hook.eu1.make.com/342syeirhgjemxax3yxhwfjphbv7w2td
+(atualizado no config.js)
+
+Configuracao do Make:
+- Modulo 1 (Webhook): Custom webhook, nome "Menu O Sem Nome"
+- Modulo 2 (Google Sheets Search Rows): Filtro por Status = TRUE
+- Modulo 3 (Array Aggregator): Source = modulo 2, campos default
+- Modulo 4 (Webhook Response): Status 200, Content-Type: application/json; charset=utf-8, Body: array do aggregator
+
+IMPORTANTE: O scheduling do cenario deve estar em "Immediately" (nao "On demand"),
+senao o Webhook Response nao funciona e devolve apenas "Accepted".
+
+---
+
+3. ESTRUTURA DA GOOGLE SHEET
+------------------------------
+Uma unica folha com 6 colunas (+ coluna auxiliar para imagens):
+
+| Categoria | name | description | price | Link Drive | image | Status |
+
+- Categoria: peixes, carne, sobremesa (singular ou plural, o codigo aceita ambos)
+- name: nome do prato
+- description: descricao do prato
+- price: preco (ex: 14,00EUR)
+- Link Drive: o dono cola aqui o link normal do Google Drive
+- image: formula que converte automaticamente o link do Drive para URL direto
+- Status: TRUE ou FALSE (para ativar/desativar pratos)
+
+Formula para a coluna image:
+=IF(E2="", "", "https://lh3.googleusercontent.com/d/" & REGEXEXTRACT(E2, "/d/([^/]+)"))
+
+---
+
+4. PROBLEMAS ENCONTRADOS E SOLUCOES
+-------------------------------------
+
+Problema 1: Webhook devolvia "Accepted" em vez de JSON
+Solucao: Mudar scheduling do cenario de "On demand" para "Immediately"
+
+Problema 2: JSON invalido - 3 objetos concatenados em vez de um
+Solucao: Simplificou-se o cenario de 8 para 4 modulos (sequencial, sem Router)
+
+Problema 3: Campos com nomes numericos ("1", "2", "3") e formato key/value
+Solucao: Adaptou-se o JavaScript (main.js) com funcao transformMenuData()
+que aceita o formato natural do Make e transforma para o formato do site
+
+Problema 4: Caracteres especiais (encoding UTF-8)
+Solucao: Header Content-Type com charset=utf-8 no Webhook Response
+
+Problema 5: Imagens do Google Drive nao apareciam no site
+Solucao: Links do Drive nao sao diretos. Converter para formato:
+https://lh3.googleusercontent.com/d/ID_DO_FICHEIRO
+Automatizado com formula REGEXEXTRACT na Google Sheet.
+
+---
+
+5. ALTERACOES NO CODIGO
+-------------------------
+
+Ficheiro: data/config.js (linha 183)
+- Atualizado URL do webhook para o novo cenario Make
+
+Ficheiro: js/main.js
+- Funcao loadMenuData(): modificada para chamar transformMenuData()
+- Nova funcao transformMenuData(): transforma dados do Make (formato key/value)
+  para o formato esperado pelo site ({peixes: [...], carnes: [...], sobremesas: [...]})
+- Mapeamento de categorias singular -> plural (peixe->peixes, carne->carnes, sobremesa->sobremesas)
+- Parsing do campo "value" (split por ", ") para extrair name, description, price, image
+
+---
+
+6. NOTAS PARA O FUTURO
+------------------------
+- As imagens no Google Drive devem estar partilhadas com "Qualquer pessoa com o link"
+- O plano gratuito do Make e suficiente para este volume de utilizacao
+- Para adicionar novas categorias ao menu, e necessario:
+  1. Adicionar a categoria na Google Sheet
+  2. Atualizar o categoryMap na funcao transformMenuData() em main.js
+  3. Adicionar o tab e panel correspondente no index.html
+- O site usa HTML puro + CSS + JavaScript vanilla (sem frameworks)
+- Hospedado no Vercel (com configuracao alternativa para Netlify)
